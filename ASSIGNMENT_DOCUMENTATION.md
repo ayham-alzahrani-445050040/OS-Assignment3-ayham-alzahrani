@@ -259,51 +259,65 @@ The semaphore makes processes wait if the CPU is already being used this prevent
 
 **Testing procedure**: 
 ```bash
-# Commands used (run the program at least 5 times)
+javac SchedulerSimulationSync.java
+java SchedulerSimulationSync
+java SchedulerSimulationSync
+java SchedulerSimulationSync
+java SchedulerSimulationSync
+java SchedulerSimulationSync
 ```
 
 **Results**: 
-(Show that running multiple times produces consistent, correct results)
+The program ran successfully and printed the final statistics each time
 
 **Why synchronization is necessary**: 
-(Explain what race conditions COULD occur without synchronization, even if you didn't observe them. Explain which shared resources need protection and why.)
+Synchronization is needed because many threads use the same shared variables Without locks, the counters or execution log could have wrong values.
 
 **Conclusion**: 
-
----
+The program works better and safer after adding locks and semaphore.
+------------
 
 ### Test 2: Exception Testing
 **What I tested**: Checking for ConcurrentModificationException
+I checked if the program shows any errors like ConcurrentModificationException
 
 **Testing procedure**: 
+I ran the program multiple times after protecting executionLog
 
 **Results**: 
+No ConcurrentModificationException appeared
 
 **What this proves**: 
-
----
+This shows that the execution log is protected correctly
+-------------------------------
 
 ### Test 3: Correctness Verification
-**What I tested**: Verifying correct final values (total burst time, context switches, etc.)
+**What I tested**: 
+I checked the final statistics printed by the program
 
 **Expected values**: 
+The completed processes should match the number of processes created
 
 **Actual values**: 
+The program printed the completed processes, context switches, waiting time, and log entries
 
 **Analysis**: 
-
----
+The output shows that the processes finished and the shared counters were updated
+----------------------------------
 
 ### Test 4: Different Scenarios
-**Scenario tested**: [e.g., different time quantum, more processes, etc.]
+**Scenario tested**: 
+I ran the program more than once with the same student ID
 
 **Purpose**: 
+To make sure the program does not crash or hang
 
 **Results**: 
+The program ran normally and printed the output
 
 **What I learned**: 
-
----
+I learned that synchronization helps avoid race conditions and makes the program more reliable
+-----------------------------------
 
 ## Part 5: Reflection and Learning
 
