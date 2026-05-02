@@ -156,52 +156,100 @@ However one lock still protects the counters correctly
 ### Critical Section #1: Counter Variables
 
 **Which variables**: 
+contextSwitchCount, completedProcessCount, totalWaitingTime.
 
 **Why they need protection**: 
+These variables are shared between multiple threads If two threads update them at the same time
+the final value may be incorrect.
 
 **Synchronization mechanism used**: 
-
+ReentrantLock.
 **Code snippet**:
 ```java
-// Paste your implementation here
+public static void incrementContextSwitch() {
+    LOCK.lock();
+    try {
+        contextSwitchCount++;
+    } finally {
+        LOCK.unlock();
+    }
+}
+
+public static void incrementCompletedProcess() {
+    LOCK.lock();
+    try {
+        completedProcessCount++;
+    } finally {
+        LOCK.unlock();
+    }
+}
+
+public static void addWaitingTime(long time) {
+    LOCK.lock();
+    try {
+        totalWaitingTime += time;
+    } finally {
+        LOCK.unlock();
+    }
+}
 ```
 
 **Justification**: 
-
+The lock makes sure that only one thread can update the shared counters at a time this prevents race conditions
 ---
 
 ### Critical Section #2: Execution Log
-
 **What resource**: 
-
+executionLog ArrayList.
 **Why it needs protection**: 
-
+executionLog is shared by multiple threads and ArrayList is not thread-safe
+multiple threads adding messages at the same time may cause incorrect data or errors.
 **Synchronization mechanism used**: 
-
+ReentrantLock
 **Code snippet**:
 ```java
-// Paste your implementation here
+public static void logExecution(String message) {
+    LOCK.lock();
+    try {
+        executionLog.add(message);
+    } finally {
+        LOCK.unlock();
+    }}
+
 ```
 
 **Justification**: 
-
+using the lock ensures that only one thread can add a log message at a time.
 ---
 
 ### Critical Section #3: CPU Semaphore
 
 **Purpose of semaphore**: 
-
+The semaphore controls access to the simulated CPU.
 **Number of permits and why**: 
-
+I used 1 permit because only one process should use the CPU at a time.
 **Where implemented**: 
+It is implemented in the run() method and runToCompletion() method.
 
 **Code snippet**:
 ```java
-// Paste your implementation here
+
+boolean acquired = false;
+try {
+    SharedResources.CPU_SEMAPHORE.acquire();
+    acquired = true;
+} catch (InterruptedException e) {
+    System.out.println("process is interrupted");
+    Thread.currentThread().interrupt();
+} finally {
+    if (acquired) {
+        SharedResources.CPU_SEMAPHORE.release();
+    }}
+
 ```
 
 **Effect on program behavior**: 
-
+The semaphore makes processes wait if the CPU is already being used this prevents more than one process from executing on the simulated CPU at the same time
 ---
 
 ## Part 4: Testing and Verification (2 marks)
