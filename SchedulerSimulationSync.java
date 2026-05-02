@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.locks.ReentrantLock;
+
 
 // ANSI Color Codes for enhanced terminal output
 class Colors {
@@ -35,6 +37,7 @@ class SharedResources {
     public static int completedProcessCount = 0;   // Shared counter - NEEDS PROTECTION!
     public static long totalWaitingTime = 0;       // Shared accumulator - NEEDS PROTECTION!
     public static List<String> executionLog = new ArrayList<>();  // Shared list - NEEDS PROTECTION!
+    public static final ReentrantLock LOCK = new ReentrantLock();
     
     // TODO #1: Add a ReentrantLock(s) here to protect critical sections
     // Example: public static final ReentrantLock lock = new ReentrantLock();
@@ -44,21 +47,33 @@ class SharedResources {
     
     // Method to increment context switch counter
     public static void incrementContextSwitch() {
-        // TODO: Protect this critical section with a lock
-        // RACE CONDITION: Multiple threads might read and write simultaneously!
-        contextSwitchCount++;
+            LOCK.lock();
+            try {
+                contextSwitchCount++;
+            } finally {
+                LOCK.unlock(); 
     }
     
     // Method to increment completed process counter
     public static void incrementCompletedProcess() {
-        // TODO: Protect this critical section with a lock
-        completedProcessCount++;
+        LOCK.lock();
+        try {
+            completedProcessCount++;
+        } finally {
+            LOCK.unlock(); 
+        }
+      
+        
     }
     
     // Method to add waiting time
     public static void addWaitingTime(long time) {
-        // TODO: Protect this critical section with a lock
-        totalWaitingTime += time;
+        LOCK.lock();
+        try {
+            totalWaitingTime += time;
+        } finally {
+            LOCK.unlock(); 
+        }
     }
     
     // Method to log execution
