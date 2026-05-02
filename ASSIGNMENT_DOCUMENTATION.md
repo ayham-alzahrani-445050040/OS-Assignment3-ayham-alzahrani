@@ -121,27 +121,21 @@ About 2 hour
 - What incorrect behavior could occur?
 
 **Your Answer**:
-
-[Your answer here - 4-6 sentences with code examples]
-
+A race condition happens when more than one thread uses the same shared data at the same time One example is contextSwitchCount++, because two threads may update it together and one update can be lost. Another example is executionLog.add(message), because executionLog is a shared ArrayList and it is not thread-safe. This could make the log incorrect or cause an error
 ---
 
 ### Question 2: Locks vs Semaphores
 **Q**: Explain the difference between ReentrantLock and Semaphore. Where did you use each in your code and why?
 
 **Your Answer**:
-
-[Your answer here - explain your implementation choices]
-
+ReentrantLock is used to protect shared data so only one thread can change it at a time. I used it for the counters and executionLog, Semaphore is used to control access to a limited resource, I used Semaphore with one permit so only one process can use the CPU at a time
 ---
 
 ### Question 3: Deadlock Prevention
 **Q**: What is deadlock? Explain TWO prevention techniques and what you did to prevent deadlocks in your code.
 
 **Your Answer**:
-
-[Your answer here - reference try-finally blocks, lock ordering, etc.]
-
+Deadlock happens when threads keep waiting for each other and the program cannot continue To prevent this, I used try-finally so the lock and semaphore are always released I also kept the locked sections short and only locked the parts that update shared data
 ---
 
 ### Question 4: Lock Granularity Design Decision 
@@ -152,8 +146,8 @@ About 2 hour
 - Given that the three counters are independent, which approach provides better concurrency and why?
 
 **Your Answer**:
-
-[Your answer here - explain coarse-grained vs fine-grained locking, independence of counters, concurrency implications. Show understanding of when to use each approach. 5-8 sentences expected.]
+I used one lock for the three counters. This is called coarse-grained locking. I chose it because it is simple and easy to understand. Fine-grained locking uses separate locks and gives better concurrency because the counters are independent.
+However one lock still protects the counters correctly
 
 ---
 
