@@ -31,55 +31,67 @@
 
 Document your development process with **minimum 3 entries** showing progression:
 
-### Entry 1 - [Date, Time]
+### Entry 1 - [APr 29, 9 PM]
 **What I implemented**: 
+I started by checking the assignment files and reading the README.md instructions to understand what is required
 
 **Challenges encountered**: 
+at first I was not fully sure about the difference between the tasks especially the difference between locks and semaphores
 
 **How I solved it**: 
+I read the assignment requirements carefully and focused on the tasks one by one
 
 **Testing approach**: 
+no code testing yet I only reviewed the project files and requirements
 
 **Time spent**: 
+1h
 
 ---
 
-### Entry 2 - [Date, Time]
+### Entry 2 - [APr 30, 11 PM ]
 **What I implemented**: 
+I changed the studentID  in SchedulerSimulationSync.java to my actual student ID
 
 **Challenges encountered**: 
+no Challenges , i have donet before in ASS1
 
 **How I solved it**: 
-
+-------------------
 **Testing approach**: 
+I saved the file and checked that the student ID appears correctly in the code
 
 **Time spent**: 
-
+30 min
 ---
 
-### Entry 3 - [Date, Time]
+### Entry 3 - [MAY 1, 7 PM]
 **What I implemented**: 
+I reviewed the Java code and tried to understand how the scheduler works and the process class, run() method, and sharedresources class
 
 **Challenges encountered**: 
+The code was long and I needed time to understand where the things required of me
 
 **How I solved it**: 
+I followed the code step by step and identified the important things
 
 **Testing approach**: 
-
+I ran the program to see the output and understand how the code work
 **Time spent**: 
-
+2h
 ---
 
-### Entry 4 - [Date, Time]
+### Entry 4 - [MAY 2, 6pm]
 **What I implemented**: 
-
+I completed Task 1 and Task 2 I added locks to protect the shared counters and the execution log.
 **Challenges encountered**: 
-
+I was not sure at first where to place the lock code.
 **How I solved it**: 
-
+I added the lock inside SharedResources and used try-finally when updating shared data.
 **Testing approach**: 
-
-**Time spent**: 
+I saved, compiled, and ran the program to check that it works.
+**Time spent**:
+1.30h
 
 ---
 
