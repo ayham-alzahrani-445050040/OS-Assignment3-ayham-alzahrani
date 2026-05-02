@@ -322,8 +322,9 @@ I learned that synchronization helps avoid race conditions and makes the program
 ## Part 5: Reflection and Learning
 
 ### What I learned about synchronization:
-
-[6-8 sentences about key concepts, challenges, insights]
+I learned that synchronization is important when multiple threads use the same shared data without synchronization, race conditions can happen and the final result may be wrong I learned that reentrantlock can protect critical sections so only one thread can update shared variables at a time I also learned that Semaphore can control access to a limited resource 
+like the simulated CPU in this assignment. Using try-finally is important because it makes sure locks and semaphores are released I also learned that concurrency problems may not appear every time, but they can still happen depending on timing
+This assignment helped me understand why operating systems need synchronization when managing processes and threads
 
 ---
 
@@ -332,15 +333,21 @@ I learned that synchronization helps avoid race conditions and makes the program
 Give TWO examples where synchronization is critical:
 
 **Example 1**: 
+Banking systems need synchronization when multiple users access the same account.
+For example if two withdrawals happen at the same time the balance must be updated safely to avoid wrong results
 
 **Example 2**: 
+Online booking systems need synchronization when many users try to reserve the same seat or room
+Synchronization makes sure that the same seat is not booked by two people at the same time
 
 ---
 
 ### How I would explain synchronization to others:
-
-[Explain to someone who just finished Assignment 1 - use simple terms and analogies]
-
+Synchronization is like using a key for a shared room. 
+If many people want to enter the room, only the person with the key can go inside
+After that person finishes they return the key so another person can enter 
+In programming the shared room is the shared data and the key is the lock or semaphore
+this prevents threads from changing the same data at the same time and causing mistakes
 ---
 
 ## Part 6: GitHub Repository Information
