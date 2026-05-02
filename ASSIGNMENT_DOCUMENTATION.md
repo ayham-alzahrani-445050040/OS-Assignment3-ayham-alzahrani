@@ -31,16 +31,21 @@
 
 Document your development process with **minimum 3 entries** showing progression:
 
-### Entry 1 - [Date, Time]
+### Entry 1 - [AP 28, 9 PM]
 **What I implemented**: 
+I started by checking the assignment files and reading the README.md instructions to understand what is required
 
 **Challenges encountered**: 
+at first I was not fully sure about the difference between the tasks especially the difference between locks and semaphores
 
 **How I solved it**: 
+I read the assignment requirements carefully and focused on the tasks one by one
 
 **Testing approach**: 
+no code testing yet I only reviewed the project files and requirements
 
 **Time spent**: 
+1h
 
 ---
 
