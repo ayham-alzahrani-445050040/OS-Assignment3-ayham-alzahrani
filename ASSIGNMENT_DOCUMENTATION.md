@@ -353,30 +353,32 @@ this prevents threads from changing the same data at the same time and causing m
 ## Part 6: GitHub Repository Information
 
 **Repository URL**: 
-
+https://github.com/ayham-alzahrani-445050040/OS-Assignment3-ayham-alzahrani
 **Number of commits**: 
-
+5
 **Commit messages**: 
-1. 
-2. 
-3. 
-4. 
+1. Set my student ID
+2. TASK1
+3. TASK2
+4. TASK3
+5. ASSIGNMENT_DOCUMENTATION.md
 
 ---
 
 ## Summary
 
 **Total time spent on assignment**: 
-
+About 6 hours
 **Key takeaways**: 
-1. 
-2. 
-3. 
+1. how to protect shared data using ReentrantLock
+2. how Semaphore controls access to one shared resource
+3. try-finally is important to avoid deadlocks
 
 **Most challenging aspect**: 
+The most challenging part was understanding where to place acquire(), release(), lock(), and unlock() correctly
 
 **What I'm most proud of**: 
-
+I am most proud that I was able to understand the code step by step and complete the synchronization tasks
 ---
 
 **End of Documentation**
