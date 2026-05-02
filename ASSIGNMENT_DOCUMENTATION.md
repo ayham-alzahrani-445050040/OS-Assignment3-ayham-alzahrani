@@ -95,17 +95,21 @@ I saved, compiled, and ran the program to check that it works.
 
 ---
 
-### Entry 5 - [Date, Time]
+### Entry 5 - [MAY 2, 8:30 PM]
 **What I implemented**: 
+I completed Task 3 by adding a Semaphore to control CPU access.
 
 **Challenges encountered**: 
+I had some confusion with acquire(), release(), and the try-catch-finally structure.
 
 **How I solved it**: 
+I used acquire() before execution and release() inside finally.
 
 **Testing approach**: 
+I compiled and ran the program and checked that the final output appears.
 
 **Time spent**: 
-
+About 2 hour
 ---
 
 ## Part 2: Technical Questions (1 mark)
