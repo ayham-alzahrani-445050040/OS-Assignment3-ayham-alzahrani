@@ -31,7 +31,7 @@
 
 Document your development process with **minimum 3 entries** showing progression:
 
-### Entry 1 - [AP 28, 9 PM]
+### Entry 1 - [APr 29, 9 PM]
 **What I implemented**: 
 I started by checking the assignment files and reading the README.md instructions to understand what is required
 
@@ -49,17 +49,20 @@ no code testing yet I only reviewed the project files and requirements
 
 ---
 
-### Entry 2 - [Date, Time]
+### Entry 2 - [APr 30, 11 PM ]
 **What I implemented**: 
+I changed the studentID  in SchedulerSimulationSync.java to my actual student ID
 
 **Challenges encountered**: 
+no Challenges , i have donet before in ASS1
 
 **How I solved it**: 
-
+-------------------
 **Testing approach**: 
+I saved the file and checked that the student ID appears correctly in the code
 
 **Time spent**: 
-
+30 min
 ---
 
 ### Entry 3 - [Date, Time]
