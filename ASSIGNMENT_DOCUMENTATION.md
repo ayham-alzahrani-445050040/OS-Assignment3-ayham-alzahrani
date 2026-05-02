@@ -65,17 +65,20 @@ I saved the file and checked that the student ID appears correctly in the code
 30 min
 ---
 
-### Entry 3 - [Date, Time]
+### Entry 3 - [MAY 1, 7 PM]
 **What I implemented**: 
+I reviewed the Java code and tried to understand how the scheduler works and the process class, run() method, and sharedresources class
 
 **Challenges encountered**: 
+The code was long and I needed time to understand where the things required of me
 
 **How I solved it**: 
+I followed the code step by step and identified the important things
 
 **Testing approach**: 
-
+I ran the program to see the output and understand how the code work
 **Time spent**: 
-
+2h
 ---
 
 ### Entry 4 - [Date, Time]
