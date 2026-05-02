@@ -81,16 +81,17 @@ I ran the program to see the output and understand how the code work
 2h
 ---
 
-### Entry 4 - [Date, Time]
+### Entry 4 - [MAY 2, 6pm]
 **What I implemented**: 
-
+I completed Task 1 and Task 2 I added locks to protect the shared counters and the execution log.
 **Challenges encountered**: 
-
+I was not sure at first where to place the lock code.
 **How I solved it**: 
-
+I added the lock inside SharedResources and used try-finally when updating shared data.
 **Testing approach**: 
-
-**Time spent**: 
+I saved, compiled, and ran the program to check that it works.
+**Time spent**:
+1.30h
 
 ---
 
